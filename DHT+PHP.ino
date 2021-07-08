@@ -9,8 +9,8 @@ DHT dht(DHTPIN, DHTTYPE);
 const char* ssid = "wifissid";
 const char* password = "wifipass";
 
-const char* host = "ipaddresofyouresp32";
-String nombreserver = "http://ipaddresofyouresp32:80/iot.php";
+const char* host = "ipaddresofyourhttpserver";
+String nombreserver = "http://ipaddresofyourhttpserver:80/iot.php";
 
 
 

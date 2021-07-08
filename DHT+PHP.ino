@@ -33,7 +33,7 @@ delay(10);
     Serial.println("WiFi connected");
     Serial.println("IP address: ");
     Serial.println(WiFi.localIP());
-//Sensor temperatura
+//Temperature sensor
     dht.begin();
 }
 
@@ -54,16 +54,16 @@ Serial.print(t);
 Serial.println(F("°C "));
 
 
-//Si el wifi esta conectado ejecuta esto
+//If wifi conected ejec this
 if (WiFi.status()== WL_CONNECTED){
  HTTPClient http;
-      //String en la que guardamos el nombre del servidor y las variables
+      //String in which we save the name of the server and the variables
       String serverPath = nombreserver + "?humedad=" + h + "&temperatura=" + t;
       
-      // IP o URL Con el path puesto justo arriba
+      // IP o URL whit the path
       http.begin(serverPath.c_str());
       
-      // Envia peticon HTTP GET 
+      // HTTP GET 
       int httpResponseCode = http.GET();
       
       if (httpResponseCode>0) {
@@ -81,5 +81,5 @@ if (WiFi.status()== WL_CONNECTED){
     else {
       Serial.println("WiFi Disconnected");
 }
-  delay(10000); //Retardo 10s Entre lectura
+  delay(10000); //Delay 10 seconds
 }
